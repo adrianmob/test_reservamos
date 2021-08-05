@@ -1,7 +1,7 @@
 import React from "react";
 import { List, ListItem, ListSubheader } from "@material-ui/core";
 
-export const Forecast = ({ forecast, selectCity }) => {
+export const Forecast = ({ forecast, selectCity, idMaxHum }) => {
   const getDay = (dt) => {
     const date = new Date(dt * 1000);
     return `${date.getDate()}/${date.getMonth() + 1}/${date.getUTCFullYear()} `;
@@ -27,7 +27,11 @@ export const Forecast = ({ forecast, selectCity }) => {
         }
       >
         {forecast.map((data) => (
-          <ListItem button key={data.dt}>
+          <ListItem
+            className={idMaxHum == data.dt ? "maxHum" : ""}
+            button
+            key={data.dt}
+          >
             <div>
               <p>{getDay(data.dt)}</p>
               <p>

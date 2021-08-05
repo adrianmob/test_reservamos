@@ -26,3 +26,7 @@ body {
 .searchBtn {
   margin-left: 20px !important;
 }
+
+.maxHum {
+  background-color: gray !important;
+}
